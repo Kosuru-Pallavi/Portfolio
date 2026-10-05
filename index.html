@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kosuru Pallavi | Java Full Stack Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080b14;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0d1120;
+            padding: 18px 8%;
+            border-bottom: 1px solid #22283a;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8b7cff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #8b7cff;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .hero-text p:first-child {
+            color: #8b7cff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin: 10px 0;
+        }
+
+        .hero h2 {
+            color: #5ee7d5;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            color: #b8bdca;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 13px 25px;
+            margin-right: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #8b7cff;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #8b7cff;
+            color: white;
+        }
+
+        .profile {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b7cff, #5ee7d5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            font-weight: bold;
+            color: #080b14;
+        }
+
+        .stats {
+            display: flex;
+            gap: 35px;
+            margin-top: 40px;
+        }
+
+        .stat h3 {
+            color: #5ee7d5;
+            font-size: 25px;
+        }
+
+        .stat p {
+            color: #9da3b2;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #ffffff;
+        }
+
+        .section-title p {
+            color: #9da3b2;
+            margin-top: 8px;
+        }
+
+        .about-text {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            color: #b8bdca;
+            font-size: 17px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #111625;
+            border: 1px solid #252b40;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .card:hover {
+            border-color: #8b7cff;
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        .card h3 {
+            color: #8b7cff;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #b8bdca;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 18px;
+            background: #8b7cff;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            background: #5ee7d5;
+            color: #080b14;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-box {
+            background: #111625;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #252b40;
+        }
+
+        .skill-box h3 {
+            color: #5ee7d5;
+            margin-bottom: 15px;
+        }
+
+        .skill {
+            display: inline-block;
+            background: #20263a;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 5px 3px;
+            font-size: 14px;
+        }
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .timeline-item {
+            background: #111625;
+            border-left: 4px solid #8b7cff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .timeline-item h3 {
+            color: #ffffff;
+        }
+
+        .timeline-item h4 {
+            color: #5ee7d5;
+            margin: 5px 0;
+        }
+
+        .timeline-item p {
+            color: #b8bdca;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .certification {
+            background: #111625;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #252b40;
+        }
+
+        .certification h3 {
+            color: #8b7cff;
+        }
+
+        .certification p {
+            color: #b8bdca;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            background: #111625;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #252b40;
+        }
+
+        .contact-box p {
+            color: #b8bdca;
+            margin: 12px 0;
+        }
+
+        .contact-box a {
+            color: #5ee7d5;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #0d1120;
+            color: #8d93a3;
+            border-top: 1px solid #22283a;
+        }
+
+        @media (max-width: 850px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+
+            .cards,
+            .skills,
+            .certifications {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            section {
+                padding: 60px 5%;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .profile {
+                width: 210px;
+                height: 210px;
+                font-size: 60px;
+            }
+
+            .stats {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+
+        <div class="logo">KP</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <p>Hello, I'm</p>
+
+        <h1>Kosuru Pallavi</h1>
+
+        <h2>Java Full Stack Developer</h2>
+
+        <p class="hero-description">
+            B.Tech graduate and passionate Java Full Stack Developer
+            with knowledge of Java, Spring Boot, HTML, CSS, JavaScript,
+            MySQL and Python basics. Interested in building responsive,
+            user-friendly and secure web applications.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="primary">
+                View My Work
+            </a>
+
+            <a href="#contact" class="secondary">
+                Contact Me
+            </a>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>82%</h3>
+                <p>B.Tech</p>
+            </div>
+
+            <div class="stat">
+                <h3>5+</h3>
+                <p>Certifications</p>
+            </div>
+
+            <div class="stat">
+                <h3>5</h3>
+                <p>Projects</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile">
+        KP
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>About Me</h2>
+
+        <p>Get to know me</p>
+
+    </div>
+
+
+    <p class="about-text">
+
+        I am Kosuru Pallavi, a B.Tech graduate with a strong interest
+        in Java Full Stack Development. I have practical knowledge of
+        Java, Spring Boot, HTML, CSS, JavaScript, MySQL and Python basics.
+        I enjoy solving programming problems and developing practical
+        software applications.
+
+    </p>
+
+
+    <br><br>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Java Development</h3>
+
+            <p>
+                Strong interest in Java programming, object-oriented
+                programming and backend application development.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Web Development</h3>
+
+            <p>
+                Knowledge of HTML, CSS and JavaScript for creating
+                responsive and user-friendly websites.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Problem Solving</h3>
+
+            <p>
+                Interested in solving coding problems and improving
+                logical thinking and programming skills.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-title">
+
+        <h2>My Skills</h2>
+
+        <p>Technologies and tools I work with</p>
+
+    </div>
+
+
+    <div class="skills">
+
+        <div class="skill-box">
+
+            <h3>Programming</h3>
+
+            <span class="skill">Java</span>
+            <span class="skill">Python Basics</span>
+            <span class="skill">SQL</span>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <h3>Frontend</h3>
+
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <h3>Backend</h3>
+
+            <span class="skill">Spring Boot</span>
+            <span class="skill">Java</span>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <h3>Database</h3>
+
+            <span class="skill">MySQL</span>
+            <span class="skill">DBMS</span>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <h3>Core Concepts</h3>
+
+            <span class="skill">Computer Networks</span>
+            <span class="skill">Operating System</span>
+            <span class="skill">DBMS</span>
+
+        </div>
+
+
+        <div class="skill-box">
+
+            <h3>Tools</h3>
+
+            <span class="skill">VS Code</span>
+            <span class="skill">Eclipse</span>
+            <span class="skill">Microsoft Office</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="section-title">
+
+        <h2>Projects</h2>
+
+        <p>My web development projects</p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="card">
+
+            <h3>Course Registration Form</h3>
+
+            <p>
+                A complete course registration form for collecting
+                student information, course details and other required
+                details with a clean and user-friendly design.
+            </p>
+
+            <p>
+                <strong>Technologies:</strong>
+                HTML, CSS, JavaScript
+            </p>
+
+            <a
+                href="https://kosuru-pallavi.github.io/Google-Form/"
+                target="_blank"
+                class="project-link">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="card">
+
+            <h3>Travel Planner</h3>
+
+            <p>
+                A travel planning website designed to help users explore
+                destinations and organize travel information through an
+                attractive and easy-to-use web interface.
+            </p>
+
+            <p>
+                <strong>Technologies:</strong>
+                HTML, CSS, JavaScript
+            </p>
+
+            <a
+                href="https://kosuru-pallavi.github.io/Travel-Planner/"
+                target="_blank"
+                class="project-link">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="card">
+
+            <h3>Lists Project</h3>
+
+            <p>
+                A web development project demonstrating the use of
+                HTML lists and structured content presentation with
+                a simple and neat webpage layout.
+            </p>
+
+            <p>
+                <strong>Technologies:</strong>
+                HTML, CSS
+            </p>
+
+            <a
+                href="https://kosuru-pallavi.github.io/Lists/"
+                target="_blank"
+                class="project-link">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+
+        <div class="card">
+
+            <h3>Class Time Table</h3>
+
+            <p>
+                A neatly organized timetable webpage presenting
+                classes, subjects, laboratory sessions, breaks and
+                other academic activities in a structured table format.
+            </p>
+
+            <p>
+                <strong>Technologies:</strong>
+                HTML, CSS
+            </p>
+
+            <a
+                href="https://kosuru-pallavi.github.io/Time-Table/"
+                target="_blank"
+                class="project-link">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 5 -->
+
+        <div class="card">
+
+            <h3>Multi-Media Blog</h3>
+
+            <p>
+                A multimedia-based blog project that presents audio,
+                video and other web content using an attractive interface
+                and browser-based HTML5 multimedia features.
+            </p>
+
+            <p>
+                <strong>Technologies:</strong>
+                HTML, CSS, JavaScript
+            </p>
+
+            <a
+                href="https://kosuru-pallavi.github.io/Multi-Media-Blog/"
+                target="_blank"
+                class="project-link">
+                View Project →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="section-title">
+
+        <h2>Experience</h2>
+
+        <p>Internship</p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>Java Full Stack Developer Intern</h3>
+
+            <h4>Internship Certification Course</h4>
+
+            <p>
+                May 2024 – June 2024
+            </p>
+
+            <p>
+                Gained practical knowledge of Full Stack Java development,
+                efficient coding, automation and real-world problem solving.
+                Worked with frontend and backend technologies including
+                Spring Boot and React.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="section-title">
+
+        <h2>Education</h2>
+
+        <p>My academic background</p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>B.Tech</h3>
+
+            <h4>
+                PBR Visvodaya Institute Of Technology and Science
+            </h4>
+
+            <p>
+                2022 – 2026 | 82% | Kavali
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>Intermediate</h3>
+
+            <h4>
+                Sri Chaitanya Junior College
+            </h4>
+
+            <p>
+                2020 – 2022 | 84.6% | Kavali
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>SSC</h3>
+
+            <h4>
+                Municipal High School
+            </h4>
+
+            <p>
+                2019 – 2020 | 88% | Kavali
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <div class="section-title">
+
+        <h2>Certifications</h2>
+
+        <p>Courses and certifications</p>
+
+    </div>
+
+
+    <div class="certifications">
+
+
+        <div class="certification">
+
+            <h3>HackerRank Java Basic</h3>
+
+            <p>
+                Java programming certification.
+            </p>
+
+        </div>
+
+
+        <div class="certification">
+
+            <h3>HackerRank SQL Basic</h3>
+
+            <p>
+                SQL fundamentals certification.
+            </p>
+
+        </div>
+
+
+        <div class="certification">
+
+            <h3>HackerRank SQL Intermediate</h3>
+
+            <p>
+                Intermediate SQL certification.
+            </p>
+
+        </div>
+
+
+        <div class="certification">
+
+            <h3>CodeTantra</h3>
+
+            <p>
+                Java Programming and HTML-CSS-JavaScript
+                Practice Sessions.
+            </p>
+
+        </div>
+
+
+        <div class="certification">
+
+            <h3>Python Full Stack Virtual Internship</h3>
+
+            <p>
+                Supreme Info Solutions Pvt. Ltd.
+            </p>
+
+        </div>
+
+
+        <div class="certification">
+
+            <h3>Introduction to Java Programming</h3>
+
+            <p>
+                edX course covering fundamental data structures
+                and algorithms.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Me</h2>
+
+        <p>
+            Let's connect and build something together
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <p>
+
+            <strong>Email:</strong>
+
+            <a href="mailto:pallavikosuripallavi@gmail.com">
+                pallavikosuripallavi@gmail.com
+            </a>
+
+        </p>
+
+
+        <p>
+
+            <strong>Phone:</strong>
+
+            <a href="tel:+9182975190">
+                +91 82975190
+            </a>
+
+        </p>
+
+
+        <p>
+
+            <strong>GitHub:</strong>
+
+            <a
+                href="https://github.com/Kosuru-Pallavi"
+                target="_blank">
+
+                github.com/Kosuru-Pallavi
+
+            </a>
+
+        </p>
+
+
+        <p>
+
+            <strong>LinkedIn:</strong>
+
+            <a
+                href="https://www.linkedin.com/in/kosuru-pallavi-961855323"
+                target="_blank">
+
+                linkedin.com/in/kosuru-pallavi-961855323
+
+            </a>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Kosuru Pallavi. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
